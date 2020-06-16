@@ -8,7 +8,6 @@ import moment from 'moment';
 
 import '@testing-library/jest-dom';
 import { CalendarModal } from '../../../components/calendar/CalendarModal';
-import { act } from '@testing-library/react';
 
 
 // jest.mock('../../../actions/events', () => ({
@@ -33,7 +32,6 @@ const initState = {
         }
     },
     auth: {
-        checking: false,
         uid: '123',
         name: 'Fernando'
     },
@@ -58,8 +56,8 @@ describe('Pruebas en <CalendarModal />', () => {
     test('debe de mostrar el modal', () => {
         
         // expect( wrapper.find('.modal').exists() ).toBe(true);
-        
-        console.log(wrapper.find('form').exists())
+        expect( wrapper.find('Modal').prop('isOpen') ).toBe(true);
+
     })
     
 
