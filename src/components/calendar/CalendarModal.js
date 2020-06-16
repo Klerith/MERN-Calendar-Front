@@ -20,7 +20,10 @@ const customStyles = {
       transform             : 'translate(-50%, -50%)'
     }
 };
-Modal.setAppElement('#root');
+
+if ( process.env.NODE_ENV !== 'test' ) {
+    Modal.setAppElement('#root');
+}
 
 const now = moment().minutes(0).seconds(0).add(1,'hours'); // 3:00:00
 const nowPlus1 = now.clone().add(1, 'hours');
